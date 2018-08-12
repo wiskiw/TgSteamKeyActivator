@@ -1,0 +1,25 @@
+{
+  "name": "tg-steam-key-activator",
+  "version": "1.0.0",
+  "description": "Exposes an API for activating game/CD keys through the Steam client.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Joshua Ferrara",
+  "license": "MIT",
+  "dependencies": {
+    "binarykvparser": "^2.2.0",
+    "colors": "^1.3.0",
+    "date-and-time": "^0.6.2",
+    "json-bigint": "^0.3.0",
+    "mtproto-storage-fs": "^0.3.1",
+    "node-tesseract": "^0.2.7",
+    "npm": "^6.1.0",
+    "protobufjs": "^4.1.3",
+    "readline-sync": "^1.4.9",
+    "steam": "^1.4.0",
+    "telegram-mtproto": "^3.1.3"
+  }
+}
