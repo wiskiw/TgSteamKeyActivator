@@ -4,7 +4,7 @@ res/
 
 
 node_modules/
-!node_modules/mtproto-storage-fs/
-!node_modules/protobufjs/
-!node_modules/telegram-mtproto/
-!node_modules/steam/
+!node_modules/mtproto-storage-fs/*
+!node_modules/protobufjs/*
+!node_modules/telegram-mtproto/*
+!node_modules/steam/*
