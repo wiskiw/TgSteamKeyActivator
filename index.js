@@ -4,9 +4,6 @@ const KeyActivator = require("./steam/key_activator.js");
 const Telegram = require('./telegram/telegram-client');
 const EventHandler = require('./telegram/event-handler');
 
-const eventEmitter = new require('events').EventEmitter;
-
-
 const colors = require('colors');
 
 // https://www.npmjs.com/package/colors
@@ -32,12 +29,6 @@ colors.setTheme({
 });
 
 
-const runtimeErrorHandler = function (err) {
-    utils.log(("Runtime error:" + err).error);
-    process.exit();
-};
-
-
 Promise.resolve()
     .then(() => {
         return KeyActivator.init(config.steam_username, config.steam_password)
@@ -60,13 +51,7 @@ Promise.resolve()
     .then(() => {
         utils.log("Launch complete, waiting for telegram messages".bgWhite.green.dim);
     })
-    .catch(runtimeErrorHandler);
-
-/*
-  return keyScanner.recognice("./res/key1.jpeg").then((cdKey) => {
-        return steam.activate(cdKey)
-    }, steamErrorHandler);
-
-
-    */
-
+    .catch((err) => {
+        utils.log(("Runtime error:" + err).error);
+        process.exit();
+    });

@@ -10,6 +10,6 @@ module.exports.tg_debug_server = false;
 module.exports.tg_user_phone = "+375440000000"; // номер Telegram акка
 
 
-//module.exports.steam_username = "abc";  // по желанию
-//module.exports.steam_password = "abc"; // по желанию
+module.exports.steam_username = "abc";  // по желанию
+module.exports.steam_password = "abc"; // по желанию
 

@@ -8,13 +8,6 @@ const chatName = "g2keys";
 const handlerTag = "[" + chatName + "]"; // debug
 
 
-/*
-    "id": 1195028505,
-    "access_hash": "14589563643703868565",
-    "title": "Free Steam",
-    "username": "freebie_steam",
- */
-
 module.exports = function (eventEmitter) {
     eventEmitter.on('event', (eventData) => {
 

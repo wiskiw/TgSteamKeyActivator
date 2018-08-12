@@ -18,7 +18,9 @@ var SteamRegistrar = function SteamRegistrar(steamUser, steamGC, debug) {
         callback = callback || null;
 
         var msgId = type.msg & ~protoMask;
-        //if (self.debug) console.info(("Message from GC: " + msgId).debug);
+
+        //console.log("message: " + msgId);
+        if (self.debug) console.info(("Message from GC: " + msgId).debug);
 
         switch (msgId) {	// In the event that we need more in the future.
             case 763:		// ClientPurchaseResponse = 763;

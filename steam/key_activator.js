@@ -43,13 +43,15 @@ exports.init = function (username, password) {
         client.connect();
 
         steamUser.on('updateMachineAuth', function (response, callback) {
-            utils.log("updateMachineAuth.");
+            utils.log("Update machine auth.".steam_ok);
             fs.writeFileSync(SENTRY_FILE_PATH, response.bytes);
-            callback({sha_file: _makeSHA(response.bytes)});
+            callback({
+                sha_file: _makeSHA(response.bytes)
+            });
         });
 
         client.on('sentry', function (sentry) {
-            utils.log("Received sentry.");
+            utils.log("Received sentry.".steam_ok);
             fs.writeFileSync(SENTRY_FILE_PATH, sentry);
         });
 
@@ -74,7 +76,7 @@ exports.init = function (username, password) {
                 steamUser.logOn(logonDetails); // повторный вход уже с authCode
 
             } else {
-                utils.log('logonDetails: ' + JSON.stringify(response));
+                utils.log('logOnDetails: ' + JSON.stringify(response));
                 utils.log("Steam login: failed".steam_error);
                 reject(exports.EC_AUTH_FAILED, response)
             }
@@ -98,17 +100,13 @@ function _readFileSentry() {
     }
 }
 
-function getGameName(purchaseResponse, rainbow) {
+function getGameName(purchaseResponse) {
     const list = purchaseResponse.purchase_receipt_info.MessageObject.lineitems;
     if (list.length > 0) {
         return list[0].ItemDescription + "";
     } else {
         return "unknown"
     }
-}
-
-function tryDetectActivatedGame(cdKey) {
-
 }
 
 
